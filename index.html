@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toboolist</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <header>
+      <img id="logo" src="img/logo.png" alt="logo boolean" />
+      <span id="logo-text">Toboolist</span>
+    </header>
+    <main>
+      <div class="container">
+        <div class="top">
+          <input type="text" placeholder="es: Fare la spesa..." />
+          <button type="button" class="btn btn-filled">Add Task</button>
+        </div>
+        <div class="tasks">
+              <ul class="inner-list">
+                <li :class = {CONDIZIONE DI DONE} v-for = "ARRAY DI ROBE INSERITE" @click ="DONE O NO">
+
+                </li>
+                <!-- INSERIRE IN MODO DINAMICO I TODO -->
+                <!-- <li class="done">
+                  <span class="circle checked"></span>Recruiting blog post
+                </li>
+                <li class="done">
+                  <span class="circle checked"></span>Mobile app luaunch
+                </li>
+                <li>
+                  <span class="circle delete"></span>Interview John H.
+                </li>
+                <li class="done">
+                  <span class="circle checked"></span>Summit update to mobile
+                  storefronts 
+                </li> -->
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,174 @@
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* COMMON */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  max-width: 42rem;
+  margin: 0 auto;
+  border-radius: 5px;
+  background-color: #edf2f7;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  font-size: 15px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 5px;
+  color: #c4cbd0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-filled {
+  border: 1px solid #14aaf5;
+  background-color: #14aaf5;
+  color: white;
+}
+
+.btn-empty {
+  border: 1px solid #c4cbd0;
+  background-color: white;
+}
+
+/* HEADER */
+
+header {
+  height: 70px;
+  padding: 10px 20px;
+  margin-bottom: 40px;
+  background-color: #edf2f7;
+  text-align: center;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+#logo {
+  height: 100%;
+  vertical-align: middle;
+}
+
+#logo-text {
+  font-size: 38px;
+  font-weight: 900;
+  vertical-align: middle;
+}
+
+/* MAIN */
+.top {
+  padding: 20px 50px;
+  border-bottom: 2px solid #f6f8f9;
+  text-align: center;
+}
+
+.top input {
+  font-size: 16px;
+  width: 50%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #c4cbd0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.tasks {
+  padding: 20px 50px;
+}
+
+li h3 {
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+li h3::before {
+  /* https://www.w3schools.com/cssref/css_entities.asp */
+  content: "\27A4";
+  margin-right: 5px;
+}
+
+li {
+  list-style: none;
+  padding: 10px 0;
+  color: #434851;
+}
+
+.inner-list li {
+  background-color: white;
+  padding: 12px 16px;
+  margin-top: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+li.circle {
+  border-bottom: 1px solid #f6f8f9;
+}
+
+li .circle::before {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  border-radius: 50%;
+  line-height: 15px;
+  font-size: 10px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+li.done {
+    text-decoration: line-through;
+}
+
+li .circle.checked::before {
+  content: "\2713";
+  border: 1px solid #2cc6ab;
+  color: #2cc6ab;
+}
+
+li .circle.delete::before {
+  content: "\2717";
+  border: 1px solid #ff0000;
+  color: #ff0000;
+}
+
+.tag {
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 14px;
+  color: white;
+  vertical-align: middle;
+}
+
+.tag-type-1 {
+  background-color: #09a9ed;
+}
+
+.tag-type-2 {
+  background-color: #ab5de6;
+}
+
+.tag-type-3 {
+  background-color: #2cc6ab;
+}
+
+.tag-type-4 {
+  background-color: #ff9b00;
+}
+
+.tag-type-5 {
+  background-color: #ec4a9d;
+}
+
+.tag-type-6 {
+  background-color: #a3d116;
+}
+
