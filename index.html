@@ -18,7 +18,8 @@
       <div id="app">
         <div class="container">
           <div class="top">
-            <input type="text" placeholder="es: Fare la spesa..." v-model="newTask" />
+            <!-- Aggiungo l'evento enter all'input  -->
+            <input type="text" placeholder="es: Fare la spesa..." v-model="newTask" @keyup.enter="addTask()"/>
             <button type="button" class="btn btn-filled" @click=" addTask() ">Add Task</button>
           </div>
           <div class="tasks">
