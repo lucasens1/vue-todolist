@@ -112,6 +112,20 @@ li.circle {
   border-bottom: 1px solid #f6f8f9;
 }
 
+/*Aggiungo la classe per trashare l'oggetto in lista */
+li .trash::before{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin-left: 10px;
+  line-height: 15px;
+  font-size: 10px;
+  text-align: end;
+  vertical-align: middle;
+  content:"Delete";
+  border-bottom: 2px solid red;
+}
+
 li .circle::before {
   display: inline-block;
   width: 15px;
@@ -123,6 +137,7 @@ li .circle::before {
   text-align: center;
   vertical-align: middle;
 }
+
 
 li.done {
     text-decoration: line-through;

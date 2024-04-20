@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css" />
     <!-- Vue  -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    
   </head>
   <body>
     <header>
@@ -24,9 +25,11 @@
           </div>
           <div class="tasks">
                 <ul class="inner-list">
+                  
                   <li :class="{ done: curTask.status }" v-for="(curTask,index) in tasks" @click="checkUncheck(curTask.status, index)" style="cursor: pointer;">
                     <!-- Condizione con check se Task.status TRUE delete Se Negato -->
-                    <span class="circle" :class=" {checked : curTask.status , delete : !curTask.status}"></span> {{ curTask.objTask }}
+                    <span class="circle" :class=" {checked : curTask.status , delete : !curTask.status}"></span> {{ curTask.objTask }}   
+                    <span class="trash" style="cursor: crosshair;" @click="removeTask(index)"></span>
                 </li>
                 </ul>
           </div>

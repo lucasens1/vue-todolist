@@ -37,6 +37,7 @@ createApp({
          */
         addTask(){
             this.tasks.push({ objTask : this.newTask, status : false });
+            this.newTask = "";
         },
         /**
          * funzione che prende in entrata lo stato attuale della task, e l'indice nell'array della task selezionata, per dare lo stato Check/Uncheck inverto il valore che passo dello stato attuale
@@ -47,5 +48,10 @@ createApp({
             console.log(this.tasks[i].status)
             this.tasks[i].status = !taskState
         },
+        removeTask(i){
+            console.log("ELIMINATO");
+            //splice(indice, n elementi da eliminare)
+            this.tasks.splice(i, 1);
+        }
     }
 }).mount('#app')
