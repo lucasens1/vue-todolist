@@ -3,11 +3,8 @@ const { createApp } = Vue;
 createApp({
     data(){
         return {
-            text : "",
             done : false,
-            checked : false,
             newTask : "",
-            toDoorNot : false, //Da fare False
             JSONArr : null,
             tasks : [
                 {
