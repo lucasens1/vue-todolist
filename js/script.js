@@ -8,6 +8,7 @@ createApp({
             checked : false,
             newTask : "",
             toDoorNot : false, //Da fare False
+            JSONArr : null,
             tasks : [
                 {
                     objTask : "Recruiting blog post",
@@ -29,7 +30,10 @@ createApp({
         }
     },
     created(){
-
+        // Recupero il salvataggio delle tasks da localStorage
+        const savedTasks = localStorage.getItem('tasks');
+        //Lo assegno all'array di oggetti
+        this.tasks = JSON.parse(savedTasks); 
     },
     methods : {
         /**
@@ -48,10 +52,24 @@ createApp({
             console.log(this.tasks[i].status)
             this.tasks[i].status = !taskState
         },
+        /**
+         * Servendosi della funzione splice elimina l'elemento all'indice
+         *
+         * @param {number} i
+         */
         removeTask(i){
-            console.log("ELIMINATO");
+            console.log("Eliminato!");
             //splice(indice, n elementi da eliminare)
             this.tasks.splice(i, 1);
+        },
+        /**
+         * Funzione che servendosi della variabile d'appoggio JSONArr crea una stringa del contenuto dell'array di oggetti e lo salva nello storage del Browser.
+         */
+        saveList(){
+            console.log("Salvato!")
+            this.JSONArr = JSON.stringify(this.tasks);
+            console.log(this.JSONArr);
+            localStorage.setItem('tasks', this.JSONArr);
         }
     }
 }).mount('#app')

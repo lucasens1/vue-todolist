@@ -126,6 +126,10 @@ li .trash::before{
   border-bottom: 2px solid red;
 }
 
+.mt-10{
+  margin-top : 10px;
+}
+
 li .circle::before {
   display: inline-block;
   width: 15px;
