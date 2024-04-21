@@ -34,7 +34,9 @@
           <!-- /Fine parte Top -->
           <!-- Tasks -->
           <div class="tasks">
-                <ul class="inner-list">      
+                <!-- Lista di task -->
+                <ul class="inner-list">
+                  <!-- Task aggiunte dinamicamente -->      
                   <li class="d-flex" :class="{ done: curTask.status }" v-for="(curTask,index) in tasks" @click="checkUncheck(curTask.status, index)" style="cursor: pointer;">
                     <!-- Condizione con check se Task.status TRUE delete Se Negato -->
                     <span class="circle" :class=" {checked : curTask.status , delete : !curTask.status}"></span>
@@ -42,8 +44,10 @@
                     <span class = "task"> {{ curTask.objTask }} </span> 
                     <span :class="curTask.taskLabel"> {{ curTask.taskLabel}} </span>
                     <span class="trash" style="cursor: crosshair;" @click="removeTask(index)"></span>
-                </li>
+                  </li>
+                  <!-- Fine liste aggiunte dinamicamente -->
                 </ul>
+                <!-- Fine lista di Task -->
                 <div class="mt-10"><button type="button" class="btn btn-filled" @click=" saveList()" style="cursor: pointer;">Salva la lista</button></div>
           </div>
           <!-- /Tasks -->

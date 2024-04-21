@@ -12,7 +12,7 @@ createApp({
                 {
                     objTask : "Recruiting blog post",
                     status : true,
-                    taskLabel : "work"
+                    taskLabel : "work",
                 },
                 {
                     objTask : "Groceries Store",
@@ -32,20 +32,28 @@ createApp({
             ],
         }
     },
-    created(){
+    created() {
         // Recupero il salvataggio delle tasks da localStorage
         const savedTasks = localStorage.getItem('tasks');
+        // Controllo il valore restituito da localStorage
+        console.log('savedTasks in localStorage:', savedTasks); 
         //Lo assegno all'array di oggetti
         this.tasks = JSON.parse(savedTasks); 
     },
     methods : {
         /**
-         * Funzione che aggiunge in maniera dinamia una nuova task al Toboolist, inizializzata false, perché è stata appena aggiunta quindi ancora da elaborare, funzione void, che semplicemente aggiorna l'array in Js e la lista in pagina
+         * Funzione che aggiunge in maniera dinamica una nuova task al Toboolist, inizializzata false, perché è stata appena aggiunta quindi ancora da elaborare, funzione void, che semplicemente aggiorna l'array in Js e la lista in pagina
          */
         addTask(){
-            this.tasks.push({ objTask : this.newTask, status : false, taskLabel : this.optionSelezionata });
+            console.log('this.tasks ora contiene:', this.tasks); //Controllo contenuto this.tasks
+            /* Controllo non sia null */
+            if (this.tasks) {
+            this.tasks.push({ objTask: this.newTask, status: false, taskLabel: this.optionSelezionata });
             this.newTask = "";
             this.optionSelezionata = "";
+            } else {
+                console.error('this.tasks è null');
+            }
         },
         /**
          * funzione che prende in entrata lo stato attuale della task, e l'indice nell'array della task selezionata, per dare lo stato Check/Uncheck inverto il valore che passo dello stato attuale
