@@ -6,22 +6,28 @@ createApp({
             done : false,
             newTask : "",
             JSONArr : null,
+            optionSelezionata : "",
+            labels : ["work", "sport", "free-time", "self-care", "food", "house-chores"],
             tasks : [
                 {
                     objTask : "Recruiting blog post",
                     status : true,
+                    taskLabel : "work"
                 },
                 {
-                    objTask : "Mobile app launch",
+                    objTask : "Groceries Store",
                     status : false,
+                    taskLabel : "food",
                 },
                 {
                     objTask : "Interview with John Locke",
                     status : true,
+                    taskLabel : "work",
                 },
                 {
-                    objTask : "Summit update to mobile storefronts",
+                    objTask : "Football at 9pm",
                     status : false,
+                    taskLabel : "sport",
                 },
             ],
         }
@@ -37,8 +43,9 @@ createApp({
          * Funzione che aggiunge in maniera dinamia una nuova task al Toboolist, inizializzata false, perché è stata appena aggiunta quindi ancora da elaborare, funzione void, che semplicemente aggiorna l'array in Js e la lista in pagina
          */
         addTask(){
-            this.tasks.push({ objTask : this.newTask, status : false });
+            this.tasks.push({ objTask : this.newTask, status : false, taskLabel : this.optionSelezionata });
             this.newTask = "";
+            this.optionSelezionata = "";
         },
         /**
          * funzione che prende in entrata lo stato attuale della task, e l'indice nell'array della task selezionata, per dare lo stato Check/Uncheck inverto il valore che passo dello stato attuale
