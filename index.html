@@ -39,11 +39,11 @@
                   <!-- Task aggiunte dinamicamente -->      
                   <li class="d-flex" :class="{ done: curTask.status }" v-for="(curTask,index) in tasks" @click="checkUncheck(curTask.status, index)" style="cursor: pointer;">
                     <!-- Condizione con check se Task.status TRUE delete Se Negato -->
-                    <span class="circle" :class=" {checked : curTask.status , delete : !curTask.status}"></span>
+                    <span class="circle w-10" :class=" {checked : curTask.status , delete : !curTask.status}"></span>
                     <!-- Così viene sbarrata solo lo span con il task e non anche la label -->
-                    <span class = "task"> {{ curTask.objTask }} </span> 
-                    <span :class="curTask.taskLabel"> {{ curTask.taskLabel}} </span>
-                    <span class="trash" style="cursor: crosshair;" @click="removeTask(index)"></span>
+                    <span class = "task w-50"> {{ curTask.objTask }} </span> 
+                    <span :class="curTask.taskLabel" class="w-20 txt-center"> {{ curTask.taskLabel}} </span>
+                    <span class="trash w-10" style="cursor: crosshair;" @click="removeTask(index)"></span>
                   </li>
                   <!-- Fine liste aggiunte dinamicamente -->
                 </ul>
