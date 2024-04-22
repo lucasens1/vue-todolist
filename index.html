@@ -43,7 +43,7 @@
                     <!-- Così viene sbarrata solo lo span con il task e non anche la label -->
                     <span class = "task w-50"> {{ curTask.objTask }} </span> 
                     <span :class="curTask.taskLabel" class="w-20 txt-center"> {{ curTask.taskLabel}} </span>
-                    <span class="trash w-10" style="cursor: crosshair;" @click="removeTask(index)"></span>
+                    <span class="trash w-10" style="cursor: crosshair;" @click.stop="removeTask(index)"></span>
                   </li>
                   <!-- Fine liste aggiunte dinamicamente -->
                 </ul>
